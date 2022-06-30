@@ -12,6 +12,9 @@ class ExtratorURL:
     def __str__(self):
         return f'{self.url}\nParâmetros: {self.get_url_parametros()}\nURL Base: {self.get_url_base()}'
 
+    def __eq__(self, other):
+        return self.url == other.url
+
     @staticmethod
     def sanitiza_url(url):
         if type(url) == str:
